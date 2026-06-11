@@ -1,9 +1,9 @@
 # Obfuscated / abnormally long command line
 
-**Use when:** you're hunting encoded or obfuscated execution — length is a proxy for a hidden
+**Use when:** you're hunting encoded or obfuscated execution - length is a proxy for a hidden
 payload.
 
-## Statistical variant — `eval len()`
+## Statistical variant - `eval len()`
 Compute command-line length and surface the longest, filtering noisy legitimate parents.
 ```spl
 index=* sourcetype="WinEventLog:Sysmon" Image="*cmd.exe" ParentImage!="*msiexec.exe" ParentImage!="*explorer.exe"

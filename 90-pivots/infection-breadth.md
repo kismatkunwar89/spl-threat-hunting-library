@@ -1,9 +1,9 @@
 # Find the active infection process (EventCode breadth)
 
 **Use when:** a parent spawned several children and you need to know which one is the *active*
-infection — not an innocent bystander like an error reporter or shell wrapper.
+infection - not an innocent bystander like an error reporter or shell wrapper.
 
-## Pivot — `dc(EventCode)`
+## Pivot - `dc(EventCode)`
 The infection process has breadth: it keeps acting across many event types after spawning.
 One-and-done processes show a single EventCode.
 ```spl

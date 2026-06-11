@@ -1,7 +1,7 @@
-# 99 — Detection Engineering
+# 99 - Detection Engineering
 
 **Not a kill-chain phase.** How to turn a noisy hunt into a low-noise alert that survives
-evasion — the meta-skill that applies across every folder.
+evasion - the meta-skill that applies across every folder.
 
 | Leaf | What it does |
 |---|---|

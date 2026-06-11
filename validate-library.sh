@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# validate-library.sh — integrity guardrail for the SPL hunting library.
+# validate-library.sh - integrity guardrail for the SPL hunting library.
 # Mandated by tri-agent consensus (2026-06-11). Run before every commit / after every add.
 #
 # Checks (deterministic, no SPL semantics):
@@ -41,7 +41,7 @@ for dir in "${FOLDERS[@]}"; do
 
     # (4) spl fence cap
     fences=$(grep -c '^```spl' "$leaf")
-    [ "$fences" -le "$MAX_SPL_FENCES" ] || err "$leaf has $fences \`\`\`spl blocks (max $MAX_SPL_FENCES) — split it"
+    [ "$fences" -le "$MAX_SPL_FENCES" ] || err "$leaf has $fences \`\`\`spl blocks (max $MAX_SPL_FENCES) - split it"
   done
 done
 
@@ -62,7 +62,7 @@ done < <(find . -name '*.md')
 # --- 5: hardcoded leftovers (should all be <placeholders>) ---
 if grep -rEn '10\.0\.0\.[0-9]|DESKTOP-[A-Z0-9]|\bwaldo\b' --include='*.md' . >/dev/null 2>&1; then
   grep -rEn '10\.0\.0\.[0-9]|DESKTOP-[A-Z0-9]|\bwaldo\b' --include='*.md' . >&2
-  err "hardcoded environment values found — replace with <placeholders>"
+  err "hardcoded environment values found - replace with <placeholders>"
 fi
 
 if [ "$FAIL" -eq 0 ]; then

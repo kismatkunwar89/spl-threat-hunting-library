@@ -3,7 +3,7 @@
 **Use when:** you're hunting persistence or injection signalled by the same process firing
 repeatedly on one host.
 
-## Statistical variant — `transaction` + mvcount
+## Statistical variant - `transaction` + mvcount
 Group process-creation events by host + image; keep only groups with more than one distinct GUID.
 ```spl
 index=* sourcetype="WinEventLog:Sysmon" EventCode=1

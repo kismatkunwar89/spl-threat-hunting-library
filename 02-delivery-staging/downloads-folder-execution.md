@@ -1,9 +1,9 @@
 # Execution from the Downloads folder
 
-**Use when:** you're chasing "a user ran something they downloaded" — process execution from a
+**Use when:** you're chasing "a user ran something they downloaded" - process execution from a
 user-writable path, atypical for enterprise software.
 
-## Detection — `EventCode 1`
+## Detection - `EventCode 1`
 Proves a process *executed* from a Downloads path (not just dropped there).
 ```spl
 index=* EventCode=1

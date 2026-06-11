@@ -1,7 +1,7 @@
-# 00 — Environment Orientation
+# 00 - Environment Orientation
 
 Splunk-side onboarding: map what's actually ingested before hunting. (This is *not* MITRE
-Discovery — it's "what data do I have?")
+Discovery - it's "what data do I have?")
 
 | Leaf | What it does |
 |---|---|

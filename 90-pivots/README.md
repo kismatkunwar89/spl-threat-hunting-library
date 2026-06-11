@@ -1,4 +1,4 @@
-# 90 — Investigation Pivots
+# 90 - Investigation Pivots
 
 **Not a kill-chain phase.** These are mid-hunt techniques that **take a known lead as input**
 (an IP, a process, an account, a known C2 IP) and widen the picture. If a query takes no lead

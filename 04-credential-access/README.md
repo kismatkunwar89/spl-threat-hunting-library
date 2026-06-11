@@ -1,7 +1,7 @@
-# 04 — Credential Access
+# 04 - Credential Access
 
 Credential theft and the authentication anomalies around it: LSASS dumping, domain
-replication, Kerberos ticket volume, and login bursts. (Auth anomalies here are *indicators* —
+replication, Kerberos ticket volume, and login bursts. (Auth anomalies here are *indicators* -
 they don't by themselves prove credential theft.)
 
 | Leaf | What it does |

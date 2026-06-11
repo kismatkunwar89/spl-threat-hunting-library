@@ -1,7 +1,7 @@
 # Identify an IP across every sourcetype
 
-**Use when:** you have an IP and need to know what it is — Windows host, Linux server, network
-device — by seeing where it appears across all data.
+**Use when:** you have an IP and need to know what it is - Windows host, Linux server, network
+device - by seeing where it appears across all data.
 
 ## Pivot
 ```spl

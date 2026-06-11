@@ -1,10 +1,10 @@
-# 06 — Command & Control / Exfiltration
+# 06 - Command & Control / Exfiltration
 
 Outbound malicious comms and data theft: beaconing, odd ports, and data staged for exfil.
 
 | Leaf | What it does |
 |---|---|
-| [beaconing.md](beaconing.md) | Per-process connection-volume spikes — C2 beacon (EC3 + streamstats) |
+| [beaconing.md](beaconing.md) | Per-process connection-volume spikes - C2 beacon (EC3 + streamstats) |
 | [uncommon-network-ports.md](uncommon-network-ports.md) | Connections on non-standard ports (EC3) |
 | [archive-exfil.md](archive-exfil.md) | Data compressed into archives before transfer (EC11) |
 
