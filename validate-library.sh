@@ -30,8 +30,9 @@ for dir in "${FOLDERS[@]}"; do
     base="$(basename "$leaf")"
     [ "$base" = "README.md" ] && continue
 
-    # (1) listed exactly once in folder README
-    count=$(grep -c -- "$base" "$readme")
+    # (1) listed exactly once in folder README (match the markdown link, not a bare substring -
+    # avoids false collisions like overpass-the-hash.md containing pass-the-hash.md)
+    count=$(grep -c -- "]($base)" "$readme")
     [ "$count" -eq 1 ] || err "$base listed $count times in $readme (want exactly 1)"
 
     # (3) at least one typed section header
