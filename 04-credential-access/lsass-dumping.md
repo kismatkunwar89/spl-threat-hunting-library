@@ -12,6 +12,8 @@ index=* EventCode=10 TargetImage="*\\lsass.exe" NOT SourceImage="*\\lsass.exe"
 ```
 *Sharpen toward dumping: `GrantedAccess="0x1FFFFF"` (full access) and `CallTrace="*UNKNOWN*"` (shellcode from unbacked memory). Group by `SourceImage` - anything absurd (e.g. `notepad.exe`) is the dumper. This is the reliable detector: an attacker can obfuscate the command line but cannot avoid opening the handle.*
 
+*Caveat tested against real data: `GrantedAccess=0x1FFFFF` alone is not rare - Sysmon itself, `csrss.exe`, `wininit.exe`, and `msiexec.exe` all legitimately request full access to lsass during normal operation and can dominate the count. Exclude that known-benign set explicitly; the signal is full access **plus** an unexpected `SourceImage`, not the access level alone.*
+
 ## Follow-up enrichment - `EventCode 1` (run only after a hit above)
 Name the technique once you have a suspect process - the command line often reveals the method.
 ```spl

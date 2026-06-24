@@ -11,6 +11,9 @@ they don't by themselves prove credential theft.)
 | [kerberos-tgt-volume.md](kerberos-tgt-volume.md) | Accounts with the highest Kerberos TGT request counts (EC4768) |
 | [login-burst-window.md](login-burst-window.md) | Accounts whose entire login history fits a tight window (EC4624 + range) |
 | [llmnr-nbtns-poisoning.md](llmnr-nbtns-poisoning.md) | Responder-style name-resolution poisoning and relay (EC22 + EC4648 domain allowlist) |
+| [kerberoasting.md](kerberoasting.md) | RC4-encrypted service ticket requests against AD service accounts (EC4769) |
+| [as-rep-roasting.md](as-rep-roasting.md) | TGT requests against accounts with pre-auth disabled (EC4768) |
+| [pass-the-hash.md](pass-the-hash.md) | LSASS access correlated with a NewCredentials logon on the same host (EC10 + EC4624) |
 
 **Auth router:** for "suspicious account / authentication activity" generally, see also
 [05 account-spread](../05-lateral-movement/account-spread.md) (one account → many machines).
