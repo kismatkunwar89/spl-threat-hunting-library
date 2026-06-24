@@ -19,6 +19,10 @@ they don't by themselves prove credential theft.)
 | [golden-silver-ticket.md](golden-silver-ticket.md) | Forged TGT/TGS tickets - reuses Pass-the-Ticket logic plus phantom-user and new-privilege checks (EC4624/4672/4769) |
 | [ad-delegation-abuse.md](ad-delegation-abuse.md) | Delegation discovery via PowerShell logging, then S4U exploitation (EC4104 + EC3 port 88) |
 | [dcshadow.md](dcshadow.md) | A non-DC machine registering a Global Catalog SPN to impersonate a Domain Controller (EC4742) |
+| [rdp-bruteforce.md](rdp-bruteforce.md) | RDP connection-volume + username-breadth brute force (Zeek `bro:rdp:json`) |
+| [kerberos-asreq-enumeration.md](kerberos-asreq-enumeration.md) | Failed AS-REQ volume + username breadth - enumeration vs. guessing (Zeek `bro:kerberos:json`) |
+| [golden-ticket-network.md](golden-ticket-network.md) | Orphaned TGS request with no preceding AS-REQ (Zeek `bro:kerberos:json`) |
+| [zerologon.md](zerologon.md) | Netlogon RPC operation volume spike, CVE-2020-1472 (Zeek `bro:dce_rpc:json`) |
 
 **Auth router:** for "suspicious account / authentication activity" generally, see also
 [05 account-spread](../05-lateral-movement/account-spread.md) (one account → many machines).

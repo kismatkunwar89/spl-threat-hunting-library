@@ -19,5 +19,18 @@ Read the sorted output for a cliff: legitimate service tickets sit in single dig
 roasting run shows hundreds to thousands against one account. Corroborate with breadth (multiple
 distinct users requesting the same service) and origin (a known-rogue domain requesting it).*
 
+## Follow-up enrichment - network detection (Zeek `bro:kerberos:json`)
+Same attack, detected from raw Kerberos network traffic instead of Windows Security logs - RC4
+alone isn't rare enough to act on, so add the same volume/breadth layer used above.
+```spl
+index=* sourcetype="bro:kerberos:json" earliest=0 request_type=TGS cipher="rc4-hmac" forwardable="true" renewable="true"
+| stats count, dc(service) as distinct_services, values(service) as services by client, id.orig_h, id.resp_h
+| sort - count
+```
+*Don't assume the anomaly will be breadth (one account hitting many services) - check for
+burst-repetition too (one account requesting the same single service many times within a
+second or two). No normal Windows client re-requests an identical ticket that fast; burst
+repetition against one target is just as real a signal as breadth across many.*
+
 **Related:** [kerberos-tgt-volume.md](kerberos-tgt-volume.md) for the TGT-request-volume
 sibling check · [dcsync.md](dcsync.md) for the AD-replication abuse this often precedes.
