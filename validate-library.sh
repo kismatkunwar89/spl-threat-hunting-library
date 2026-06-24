@@ -20,7 +20,7 @@ FAIL=0
 err() { echo "FAIL: $*" >&2; FAIL=1; }
 
 # Folders to scan (phase + meta). README/CONTRIBUTING/validator are not leaves.
-mapfile -t FOLDERS < <(find . -mindepth 1 -maxdepth 1 -type d | sort)
+mapfile -t FOLDERS < <(find . -mindepth 1 -maxdepth 1 -type d -not -name '.*' | sort)
 
 # --- 1 + 3 + 4: per-leaf checks, and presence in folder README ---
 for dir in "${FOLDERS[@]}"; do
